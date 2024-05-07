@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registrasi</h2>
+        <form action="{{ url_for('register') }}" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <label for="type">Type</label>
+            <select id="type" name="type" required>
+                <option value="">Choose Type</option>
+                <option value="First Responder">First Responder</option>
+                <option value="Investigator">Investigator</option>
+                <option value="Officer">Officer</option>
+            </select>
+
+            <label for="visibility">Visibility</label>
+            <input type="text" id="visibility" name="visibility" placeholder="Enter Visibility" required>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name" required>
+
+            <label for="departement">Departement</label>
+            <input type="text" id="departement" name="departement" placeholder="Enter Departement" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter Address" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Sudah memiliki akun? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</body>
+</html>
